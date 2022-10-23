@@ -1,1 +1,14 @@
-<%# Update me %><%= @monsters.inspect %>
+@import 'bootstrap/scss/bootstrap';
+
+<h1>Listado de todos los monstruos</h1>
+<% @monsters.each do |m| %>
+    Nombre: <%= link_to m.name, m%><br>
+    Descripcion: <%= m.description%><br>
+    <% if Tweet.where(monster_id: m.id).count > 1%> 
+    <span style="color: red;"> Twitero destacado: </span>
+    <% end %>
+<% end %>
+
+<div class="container-fluid bg-light text-center p-3"> 
+    <p class="small">Copyright &copy; 2022</p>
+</div>

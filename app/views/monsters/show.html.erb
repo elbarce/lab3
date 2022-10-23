@@ -1,1 +1,30 @@
-<%# Update me %><%= @monster.inspect %>
+<!--<h1> <%= @monster.name %></h1>
+<p><%= @monster.description %></p>
+<button class="btn_danger">Eliminar</button>-->
+
+<table class="tabla">
+    <thead> 
+        <tr>
+            <th> Nombre </th>
+            <th> Descripcion </th>
+            <th> Eliminar </th>
+            <th> Twetts </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @monster.name %></td>
+            <td><%=@monster.description %></td>
+            <td><button class="btn_danger">Eliminar</button></td>
+            <td> 
+                <% @tweet.each do |t| %>
+                <%= t.content %><br>
+                <% end %>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="container-fluid bg-light text-center p-3"> 
+    <p class="small">Copyright &copy; 2022</p>
+</div>
